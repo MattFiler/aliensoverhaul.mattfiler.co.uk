@@ -1,0 +1,859 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <!--
+            TemplarGFX's ACM Overhaul
+            Website and publicity by Matt Filer (www.mattfiler.co.uk)
+            All rights to the base game remain with SEGA Corp. and Gearbox Software.
+        -->
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="icon" href="favicon.ico">
+        <title>TemplarGFX's ACM Overhaul</title>
+
+        <meta name="description" content="The most comprehensive overhaul of Aliens: Colonial Marines fixing balancing, textures, AI and more." />
+        <meta name="keywords" content="aliens, colonial marines, overhaul, modding, unreal engine, fix, patch" />
+
+        <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+        <link href='https://fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css'>
+        
+        <style>
+            body {
+                font-family: 'Montserrat', sans-serif;
+            }
+            
+            .header_image {
+                position: absolute; 
+                z-index: 999; 
+                left: 0; 
+                right: 0; 
+                margin-left: auto; 
+                margin-right: auto; 
+                max-width: 500px; 
+                margin-top: 70px;
+            }
+            
+            .carousel {
+              height: 900px;
+              margin-bottom: 60px;
+            }
+            .carousel-caption {
+              z-index: 10;
+            }
+            .carousel .item {
+              height: 900px;
+              background-color: #777;
+            }
+            .carousel-inner > .item > img {
+              position: absolute;
+              top: 0;
+              bottom: 0;
+              left: 0;
+              right: 0;
+              height: 900px;
+            }
+            
+            .item > img {
+                background-size: cover;
+                background-position: center;
+                width: 100%;
+            }
+            .first-slide {
+                background: url("slide4.jpg"); 
+            }
+            .second-slide {
+                background: url("slide3.jpg"); 
+            }
+            .third-slide {
+                background: url("slide5.jpg"); 
+            }
+            .fourth-slide {
+                background: url("slide2.jpg"); 
+            }
+            
+            @media (max-width: 990px) {
+                .desktop {
+                    display: none;
+                }
+                .header_image {
+                    margin-top: 30px !important;
+                    width: 80%;
+                }
+            
+                .carousel {
+                  height: 550px !important;
+                }
+                .carousel .item {
+                  height: 550px !important;
+                }
+                .carousel-inner > .item > img {
+                  height: 550px !important;
+                }
+            }
+            @media (min-width: 990px) {
+                .mobile {
+                    display: none;
+                }
+                .carousel-caption > p {
+                    padding-bottom: 20px;
+                }
+                .carousel-caption p {
+                    margin-bottom: 20px;
+                    font-size: 21px;
+                    line-height: 1.4;
+                }
+            }
+        </style>
+    </head>
+
+    <body>
+        <img src="logo_small.png" width="100%" class="header_image">
+        
+        <div id="myCarousel" class="carousel slide" data-ride="carousel">
+          <ol class="carousel-indicators">
+            <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+            <li data-target="#myCarousel" data-slide-to="1"></li>
+            <li data-target="#myCarousel" data-slide-to="2"></li>
+            <li data-target="#myCarousel" data-slide-to="3"></li>
+          </ol>
+          <div class="carousel-inner" role="listbox">
+            <div class="item active">
+              <img class="first-slide" src="pixel.png">
+              <div class="container">
+                <div class="carousel-caption">
+                  <h1>The Ultimate Experience</h1>
+                  <p>TemplarGFX's ACM Overhaul is by far the best and most comprehensive mod for Aliens: Colonial Marines. Fixing AI, balancing, textures and more - this is the ultimate Aliens gaming experience!</p>
+                </div>
+              </div>
+            </div>
+            <div class="item">
+              <img class="second-slide" src="pixel.png">
+              <div class="container">
+                <div class="carousel-caption">
+                  <h1>Improved NPC Logic</h1>
+                  <p>NPCs including marines, W-Y soldiers and xenomorphs have had their logic and intelligence improved significantly from the base game allowing for more immersive encounters.</p>
+                </div>
+              </div>
+            </div>
+            <div class="item">
+              <img class="third-slide" src="pixel.png">
+              <div class="container">
+                <div class="carousel-caption">
+                  <h1>Fixed Textures and Shadows</h1>
+                  <p>Textures and shadows have been boosted in resolution and texture issues exisiting in the base game have been fixed. This is the way the game was meant to be played!</p>
+                </div>
+              </div>
+            </div>
+            <div class="item">
+              <img class="fourth-slide" src="pixel.png">
+              <div class="container">
+                <div class="carousel-caption">
+                  <h1>Extensively Tested Rebalancing</h1>
+                  <p>The game has been rebalanced by altering NPCs and damage rates of weapons, this can lead to more enjoyable firefights and more movie-realistic gameplay. Changes have been thoroughly tested.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+            <!--
+          <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
+            <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+            <span class="sr-only">Previous</span>
+          </a>
+          <a class="right carousel-control" href="#myCarousel" role="button" data-slide="next">
+            <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+            <span class="sr-only">Next</span>
+          </a>
+            -->
+        </div>
+        
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <h2 align="center">Download now for free on ModDB!</h2>
+                    <br>
+                </div>
+            </div>
+			
+            <div class="row" align="center">
+                <div class="col-md-3"></div>
+                <div class="col-md-3">
+                    <a href="http://www.moddb.com/mods/templargfxs-acm-overhaul" title="View TemplarGFX's ACM Overhaul on Mod DB" target="_blank"><img src="http://button.moddb.com/popularity/medium/mods/29473.png" alt="TemplarGFX's ACM Overhaul" /></a>
+                    <br><br><br>
+                </div>
+                <div class="col-md-3">
+                    <!--
+                    <a href="http://www.moddb.com/mods/templargfxs-acm-overhaul/downloads/templargfxs-acm-overhaul-v2" title="Download TemplarGFX's ACM Overhaul V2 - Mod DB" target="_blank"><img src="http://button.moddb.com/download/medium/99630.png" alt="TemplarGFX's ACM Overhaul V2" /></a>
+
+                    <a href="http://www.moddb.com/mods/templargfxs-acm-overhaul/downloads/templargfxs-acm-overhaul-v3" title="Download TemplarGFX's ACM Overhaul V3 - Mod DB" target="_blank"><img src="http://button.moddb.com/download/medium/100805.png" alt="TemplarGFX's ACM Overhaul V3" /></a>
+					
+                    <a href="http://www.moddb.com/mods/templargfxs-acm-overhaul/downloads/templargfxs-acm-overhaul-v4-hadleys-hope" title="Download TemplarGFX's ACM Overhaul V4 - Mod DB" target="_blank"><img src="http://button.moddb.com/download/medium/101023.png" alt="TemplarGFX's ACM Overhaul V4" /></a>
+                    -->
+					<a href="http://www.moddb.com/mods/templargfxs-acm-overhaul/downloads/acm-overhaul-v5-game-over-man" title="Download TemplarGFX's ACM Overhaul V5 - Game Over Man! - Mod DB" target="_blank"><img src="http://button.moddb.com/download/medium/129468.png" alt="TemplarGFX's ACM Overhaul V5 - Game Over Man!" /></a>
+                    <br><br><br>
+                </div>
+                <div class="col-md-3"></div>
+            </div>
+			
+            <div class="row" align="center">
+                <div class="col-md-3"></div>
+                <div class="col-md-6">
+                    <h2>Support TemplarGFX!</h2>
+                    <br>
+                    <form method="GET" action="https://www.paypal.me/TemplarGFX/send">
+                    <div class="input-group">
+                        <span class="input-group-addon" style="height: 36px !important;">
+                            <select name="currencyCode">
+                                <option value="ARS">ARS</option>
+                                <option value="AUD" selected>AUD</option>
+                                <option value="BRL">BRL</option>
+                                <option value="CAD">CAD</option>
+                                <option value="CHF">CHF</option>
+                                <option value="CZK">CZK</option>
+                                <option value="DKK">DKK</option>
+                                <option value="EUR">EUR</option>
+                                <option value="GBP">GBP</option>
+                                <option value="HKD">HKD</option>
+                                <option value="HUF">HUF</option>
+                                <option value="ILS">ILS</option>
+                                <option value="JPY">JPY</option>
+                                <option value="MXN">MXN</option>
+                                <option value="MYR">MYR</option>
+                                <option value="NOK">NOK</option>
+                                <option value="NZD">NZD</option>
+                                <option value="PHP">PHP</option>
+                                <option value="PLN">PLN</option>
+                                <option value="RUB">RUB</option>
+                                <option value="SEK">SEK</option>
+                                <option value="SGD">SGD</option>
+                                <option value="THB">THB</option>
+                                <option value="TRY">TRY</option>
+                                <option value="TWD">TWD</option>
+                                <option value="USD">USD</option>
+                                <option value="ZAR">ZAR</option>
+                            </select>
+                        </span>
+                        <input type="text" placeholder="0.00" name="amount" class="form-control" style="height: 36px !important;">
+                        <span class="input-group-btn">
+                            <button class="btn btn-default" type="submit" style="height: 36px !important;">Next</button>
+                        </span>
+                    </div>
+                    </form>
+                    <br><br><br><br><br class="desktop">
+                </div>
+                <div class="col-md-3"></div>
+            </div>
+        </div>
+        
+        <div class="jumbotron mobile">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12">
+                        <h3 align="center">Featured on...</h3>
+                    </div>  
+                </div>
+                <div class="row">
+                    <a href="http://uk.ign.com/articles/2016/04/04/this-mod-fixes-aliens-colonial-marines-on-pc">
+                        <div class="col-md-3">
+                            <img src="related/ign.png" width="100%" style="padding: 10px 50px 10px 50px;">
+                        </div>
+                    </a>
+                    <a href="http://www.kotaku.co.uk/2016/04/04/modder-makes-aliens-colonial-marines-considerably-less-shit">
+                        <div class="col-md-3">
+                            <img src="related/kotaku.png" width="100%" style="padding: 10px 50px 10px 50px;">
+                            <br><br>
+                        </div>
+                    </a>
+                    <a href="http://www.pcgamer.com/modder-improves-aliens-colonial-marines/">
+                        <div class="col-md-3">
+                            <img src="related/pcgamer.png" width="100%" style="padding: 10px 50px 10px 50px;">
+                            <br><br>
+                        </div>
+                    </a>
+                    <a href="http://www.polygon.com/2016/4/4/11362754/modder-takes-it-upon-himself-to-fix-aliens-colonial-marines">
+                        <div class="col-md-3">
+                            <img src="related/polygon.png" width="100%" style="padding: 10px 50px 10px 50px;">
+                            <br><br>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </div>
+        
+        <div class="jumbotron desktop">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12">
+                        <h3 align="center">Featured on...</h3>
+                    </div>  
+                </div>
+                <div class="row">
+                    <a href="http://uk.ign.com/articles/2016/04/04/this-mod-fixes-aliens-colonial-marines-on-pc">
+                        <div class="col-md-3" style="height: 130px;">
+                            <img src="related/ign.png" width="100%" style="padding-top: 15px;">
+                        </div>
+                    </a>
+                    <a href="http://www.eurogamer.net/articles/2016-04-04-modder-fixes-aliens-colonial-marines">
+                        <div class="col-md-3" style="height: 130px;">
+                            <img src="related/eurogamer.png" width="100%" style="padding-top: 35px;">
+                            <br><br>
+                        </div>
+                    </a>
+                    <a href="http://www.pcgamer.com/modder-improves-aliens-colonial-marines/">
+                        <div class="col-md-3" style="height: 130px;">
+                            <img src="related/pcgamer.png" width="100%" style="padding-top: 34px;">
+                            <br><br>
+                        </div>
+                    </a>
+                    <a href="http://www.polygon.com/2016/4/4/11362754/modder-takes-it-upon-himself-to-fix-aliens-colonial-marines">
+                        <div class="col-md-3" style="height: 130px;">
+                            <img src="related/polygon.png" width="100%" style="padding-top: 10px;">
+                            <br><br>
+                        </div>
+                    </a>
+                </div>
+                <div class="row">
+                    <a href="http://www.shacknews.com/article/93922/aliens-colonial-marines-mod-fixes-the-game-for-a-better-experience">
+                        <div class="col-md-3" style="height: 130px;">
+                            <img src="related/shacknews.png" width="100%" style="padding-top: 30px;">
+                            <br><br>
+                        </div>
+                    </a>
+                    <a href="https://www.vg247.com/2016/04/04/aliens-colonial-marines-overhaul-mod/">
+                        <div class="col-md-3" style="height: 130px;">
+                            <img src="related/vg247.png" width="100%" style="padding-top: 20px;">
+                            <br><br>
+                        </div>
+                    </a>
+                    <a href="http://www.kotaku.co.uk/2016/04/04/modder-makes-aliens-colonial-marines-considerably-less-shit">
+                        <div class="col-md-3" style="height: 130px;">
+                            <img src="related/kotaku.png" width="100%" style="padding-top: 7px;">
+                            <br><br>
+                        </div>
+                    </a>
+                    <a href="http://www.digitalspy.com/gaming/alien-prometheus/news/a789230/praise-the-modders-aliens-colonial-marines-isnt-as-rubbish-as-it-used-to-be/">
+                        <div class="col-md-3" style="height: 130px;">
+                            <img src="related/digitalspy.png" width="100%" style="padding-top: 27px;">
+                            <br><br>
+                        </div>
+                    </a>
+                </div>
+                <div class="row">
+                    <a href="http://gamerant.com/aliens-colonial-marines-mod-how-it-should-have-been/">
+                        <div class="col-md-3" style="height: 120px;">
+                            <img src="related/gamerant.png" width="100%" style="padding-top: 30px;">
+                            <br><br>
+                        </div>
+                    </a>
+                    <a href="http://www.engadget.com/2016/04/04/aliens-colonial-marines-overhaul-mod/">
+                        <div class="col-md-3" style="height: 120px;">
+                            <img src="related/engadget.png" width="100%" style="padding-top: 0px;">
+                            <br><br>
+                        </div>
+                    </a>
+                    <a href="http://www.gamespot.com/articles/aliens-colonial-marines-significantly-overhauled-w/1100-6437498/">
+                        <div class="col-md-3" style="height: 120px;">
+                            <img src="related/gamespot.png" width="100%" style="margin-top:-5px;">
+                            <br><br>
+                        </div>
+                    </a>
+                    <a href="http://www.destructoid.com/this-is-what-aliens-colonial-marines-should-have-been--353034.phtml">
+                        <div class="col-md-3" style="height: 120px;">
+                            <img src="related/destructoid.png" width="100%" style="padding-top: 33px;">
+                            <br><br>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </div>
+        
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12" style="font-size: 20px; text-align: center; padding-bottom: 15px;">
+                    <br>
+                    <p>Experience Aliens: Colonial Marines how it should have been when it first released. This heavily balanced and thoroughly play-tested mod is built for exciting, suspenseful and most importantly, fun gameplay.</p>
+                    <br>
+                    <p>Xenomorphs have seen the most improvements, with fixes to their behavior and core mechanics to make them truly terrifying foes, dramatically shifting the tone of the entire campaign.</p>
+                    <br>
+                    <p>This state of the bad-ass art modification for Aliens: Colonial Marines reworks, reprograms and rebalances xenomorph AI, human AI, weapon mechanics, ballistics, animations, shaders, particles, decals, lighting, and engine features to get the best out of the game possible. This is truly the ultimate Aliens gaming experience!</p>
+                    <br>
+                </div>
+            </div>
+        </div>        
+        
+        <div class="jumbotron">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12" style="text-align: center; padding-top: 10px;">
+                        <p data-toggle="modal" data-target="#changelog" style="cursor: pointer;">Want to see a full changelog? Click here.</p>
+						
+						<style>
+							.adsbygoogle { margin-top:25px; }
+						</style>
+						<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+						<ins class="adsbygoogle"
+							 style="display:block"
+							 data-ad-client="ca-pub-5600575894723240"
+							 data-ad-slot="2399546616"
+							 data-ad-format="auto"></ins>
+						<script>
+						(adsbygoogle = window.adsbygoogle || []).push({});
+						</script>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12" style="text-align: center;">
+                    <br><br>
+                    <p>This modification of Aliens: Colonial Marines is not affiliated with Gearbox Software, SEGA, TimeGate Studios, 20th Century Fox or any other partners.</p>
+                    <p>Aliens: Colonial Marines is a product of the SEGA Corporation developed by Gearbox Software. This mod requires the base game to be able to play.</p>
+                    <p>Thanks to everyone at Gearbox who put their time into this game. Massive respect!</p>
+                    <hr>
+                    <p style="font-weight: bold;">TemplarGFX's ACM Overhaul was created by James Dickinson.</p>
+                    <p style="font-weight: bold;">Website and promotional material created by <a href="http://mattfiler.co.uk">Matt Filer</a>.</p>
+                    <br><br>
+                </div>
+            </div>
+        </div>  
+        
+        <div class="modal fade" id="changelog" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+          <div class="modal-dialog" role="document">
+            <div class="modal-content">
+              <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title" id="myModalLabel">ACM Overhaul Changelog</h4>
+              </div>
+              <div class="modal-body">
+                  <ul>
+                    <li>Engine / System</li>
+                      <ul>
+                          <li>Compatibility File modified so that all graphics card, regardless of model get by default the maximum quality settings available.</li>
+                          <li>Shadow Management modified to allow higher resolution shadows, and more low resolution distant shadows to ensure no pop-in of lighting mechanics.</li>
+                          <li>Texture input switched to use maximum LOD values, Anistropic Filtering and higher quality Sharpening filter for distant textures</li>
+                          <li>Particle System Spawn Rates, Life Times and LOD settings increased to remove resource limit restrictions Many Particle Effects redesigned using different effects to increase visibility / quality of the over-all in-game effects (WIP)</li>
+                          <li>Lighting Models for Objects and Statics and many world objects improved through changes to Specular, Diffuse, Rim Lighting and Normal Mapping adjustments (WIP)</li>
+                          <li>Dead Bodies, Body Parts, Acid Splashes and Blood Splashes remain in the game world indefinitely (to the limit of the engine, plus some points "clear" the level where everything is removed)</li>
+                          <li>Spawning Volumes for dynamic and wave-attack sequences in the campaign have had a significant increase to the number of Xeno's and Mercs that can be spawned. (WIP)</li>
+                          <li>Xeno's can easily overwhelm an area if not dealt with immediately, and Mercenary Loadouts are much more varied, with more smart-gun/flamer/battle-file merc's spawning.</li>
+                          <li>Tracer fire on all weapons switched to use the Sentry Gun tracer. This is what it looked like in the E3 demo</li>
+                          <li>Dropped weapons stay around for a really long time</li>
+                      </ul>
+                    <li>Campaign (Entire feature set is WIP)</li>
+                      <ul>
+                          <li>One-Off and special objects, effects and sequences have been beefed up and made to look as good as they can</li>
+                          <li>Fog, Smoke, Rain and other scene effects increased in density for particular areas to enhance the atmosphere</li>
+                          <li>Timings of cinematics tweaked where possible</li>
+                      </ul>
+                    <li>Xenomorph Shared</li>
+                      <ul>
+                          <li>Animations for Melee Combat (Win / Tie / Lose), Stance Changes, Jumping, Surface Transition, Stalking and Idling re-timed for better in-game behavior and movement (WIP)</li>
+                          <li>Damage Zones and Critical Hit amounts reworked so that Head Shots are needed to take a Xeno down quickly, with glancing shots doing little damage</li>
+                          <li>Weapon Fire impacts and Deaths cause visual acid spurts/splashes that will burn and damage anything it touches</li>
+                          <li>Xenomorph Soldier / Crusher (most actions for the Crusher are heavily scripted, but any dynamic actions use Soldier AI mechanics)</li>
+                          <li>Movement Speed, Acceleration, Weight, Jump Power and Flight Speed rebalanced so they are extremely agile and move swiftly around the cluttered levels.</li>
+                          <li>Melee Encounter Mechanics modified so that they are almost exclusively used when it will kill the target. Xenos will wear down your armor with claws and kill you with an encounter</li>
+                          <li>Pouncing reworked to improve movement around the map by reducing the maximum distance to consider jumping to. This leads to better object hurdling and wall/roof usage</li>
+                          <li>Limitations of switching between wall/roof/floor "opened" to allow more dynamic approaches</li>
+                          <li>Combat Damage significantly increased so only a few claw attacks are required to down a human (WIP)</li>
+                      </ul>
+                    <li>Xenomorph Lurker</li>
+                      <ul>
+                          <li>AI decision timing increased 500% to increase their ability to outmaneuver you, without being impossibly difficult. Lurkers are truly terrifying!</li>
+                          <li>Movement Speed, Acceleration, Weight, Jump Power and Flight Speed rebalanced so they are extremely agile and move swiftly around the cluttered levels.</li>
+                          <li>Cover Mechanics reworked so they are exposed even less and move more often to stay hidden</li>
+                          <li>Combat Mechanics reworked so that they will wear you down through several spaced attacks before finishing you with a Melee Encounter</li>
+                          <li>Pouncing significantly nerfed to force them to run around instead of jumping across the maps. Increases their vulnerability crossing open spaces</li>
+                          <li>Melee encounter difficulty increased so fighting it off is a challenge (WIP)</li>
+                      </ul>
+                    <li>Xenomorph Ranger</li>
+                      <ul>
+                          <li>AI decision timing increased 500% so that they are much more reactive in their position choices. Rangers will quickly reposition to continue their barrage</li>
+                          <li>Movement Speed, Acceleration, Weight, Jump Power and Flight Speed rebalanced so they are extremely agile and move swiftly around the cluttered levels.</li>
+                          <li>Melee combat reconfigured to match Soldier melee combat. This makes Rangers more deadly than Soldiers!</li>
+                          <li>Acid does alot more damage but flies slower through the air to compensate (WIP)</li>
+                      </ul>
+                    <li>Xenomorph Boiler</li>
+                      <ul>
+                          <li>No changes have been directly made to the Boiler. Its AI is based on the Xeno Soldier, however its specialized mechanics already set a great pace in their short sewer sequence in the campaign so I did not change them.</li>
+                          <li>Their explosion however uses the generic acid damage mechanics and so are much more dangerous to groups</li>
+                      </ul>
+                    <li>Xenomorph Facehugger</li>
+                      <ul>
+                          <li>AI decision timing increased 200% to increase their ability quickly find a good pouncing position and hide from gunfire</li>
+                          <li>Movement Speed and Acceleration rebalanced so they are extremely quick and hard to hit</li>
+                          <li>Health greatly increased so a single hit won't stop them (WIP)</li>
+                          <li>Melee encounter difficulty greatly increased so fighting them off is super hard (WIP)</li>
+                      </ul>
+                    <li>Human Shared</li>
+                      <ul>
+                          <li>Animations for Stance Changes, Awareness and Idling reworked to look smoother (WIP)</li>
+                          <li>Situational Voice Acting reworked to make AI more chatty and informative. Calling out enemies, movements and kills more often, as well as making scenic comments (WIP)</li>
+                          <li>Awareness reconfigured to be much more realistic opening up more tactical game-play options</li>
+                          <li>Vision reworked to allow sneaking and hiding to be used allowing stealth play in some sequences. AI reposition more often to get a better line of sight on their target</li>
+                          <li>Gore Mechanics enabled for human corpses, allowing incidental damage and reactions to explosions after death</li>
+                          <li>Weapons Carried by AI use the same Recoil and Ballistics of the player weapons, and as such effect how deadly they are with each weapon (see below)</li>
+                          <li>Armor used by the AI use the same mechanics as the Player armor (see below)</li>
+                      </ul>
+                    <li>Weyland Yutani Mercaneries</li>
+                      <ul>
+                          <li>Teamwork tactics and information sharing reconfigured to remove their hive-mind like abilities. They share only what you hear them say</li>
+                          <li>Weapon Damage rebalanced to reduce their threat level against humans and xenos. Greatly reduces the frustration of fighting them, and makes them much weaker vs Xenos (WIP)</li>
+                          <li>Health GREATLY reduced (they had 4x the health of the player originally)</li>
+                      </ul>
+                    <li>Colonial Marines</li>
+                      <ul>
+                          <li>Hive-Mind like ability reconfigured to improve the teamwork used by the AI in conjunction with player actions. Better use of cover, suppression and flanking</li>
+                          <li>Weapon Damage rebalanced to increase their effectiveness in combat dramatically without making them overpowered. (WIP)</li>
+                          <li>O'Neil's smart-gun mechanics modified so he is more useful with it (WIP)</li>
+                      </ul>
+                    <li>Human Armor (entire feature set is WIP)</li>
+                      <ul>
+                          <li>Base damage absorption greatly increased so that taking fire without armor is extremely painful. Armor is now MUCH more important to stay alive</li>
+                          <li>When fighting Mercs firing at non-armored locations is important to take them down quick (neck, arms, legs) with weaker weapons</li>
+                      </ul>
+                    <li>Shoulder Lamp</li>
+                      <ul>
+                          <li>Shoulder lamp illumination area greatly increased for the players and AI</li>
+                          <li>Fall-off distance increased but with a more gradual loss of light</li>
+                          <li>Light moves with the left arm, and thefore the Motion Tracker</li>
+                      </ul>
+                    <li>Combat Pistol / Gorman's</li>
+                      <ul>
+                          <li>Weight, Recoil and Ballistics (WRB from now on) rebalanced to more accurately match a PPK Pistol</li>
+                          <li>Holding position moved forward a lot so the gun is not so big on screen. (can look a little funny when bringing up the Motion Tracker)</li>
+                      </ul>
+                    <li>Service Pistol / Vasquez's</li>
+                      <ul>
+                          <li>WRB rebalanced to more accurately match a Colt .45 ACP</li>
+                          <li>Holding position moved forward a lot so the gun is not so big on screen.</li>
+                      </ul>
+                    <li>Sub Machine-gun</li>
+                      <ul>
+                          <li>WRB rebalanced to more accurately match an MP7A1 SMG</li>
+                          <li>Pump Shotgun, Hick's Shotgun</li>
+                          <li>Fires 00 Buckshot</li>
+                          <li>Weight, Recoil and Ballistics rebalanced to more accurately match a Mossburg 500 Cruiser</li>
+                      </ul>
+                    <li>Auto Shotgun</li>
+                      <ul>
+                          <li>Fires #4 Buckshot</li>
+                          <li>WRB rebalanced to more accurately match an Saiga 12 Shotgun</li>
+                          <li>Incindiary Ammo does ALOT more damage</li>
+                          <li>Grenade Underballel holds 4 grenades, but does more damage</li>
+                          <li>descdesc</li>
+                          <li>descdesc</li>
+                      </ul>
+                    <li>Double Barrel Shotgun</li>
+                      <ul>
+                          <li>Fires 2 x Birdshot</li>
+                          <li>WRB rebalanced to more accurately match a 411 Bear Claw Double Barrel Short Shotgun</li>
+                      </ul>
+                    <li>Combat Shotgun</li>
+                      <ul>
+                          <li>Fires 00 Buckshot</li>
+                          <li>WRB rebalanced to more accurately match an Ithaca 37 Shotgun</li>
+                          <li>Explosive Rounds do the same damage as an underbarrel grenades</li>
+                          <li>Flatchett rounds do more damage</li>
+                      </ul>
+                    <li>Hick's Shotgun</li>
+                      <ul>
+                          <li>Fires special "future" ammo with 12 pellets of pain!</li>
+                          <li>Functions the same as the Combat Shotgun, just with much more oomph</li>
+                          <li>Less Ammo to compensate</li>
+                      </ul>
+                    <li>M4A1 MK2 Pulse Rifle (Heavily WIP)</li>
+                      <ul>
+                          <li>WRD rebalanced to more accurately match an automatic assault rifle. </li>
+                          <li>Its stable and accurate, but not as powerful as Hudson's</li>
+                          <li>Shotgun Underbarrel weapon fires same ammo as Hick's shotgun, but carries only 4 shells.</li>
+                          <li>Grenade Underballel holds 4 grenades, but does more damage</li>
+                      </ul>
+                    <li>Hudson's 'Classic' M4A1 Pulse Rifle</li>
+                      <ul>
+                          <li>WRB rebalanced to more accurately match a Light Machine Gun with movie 'canon' statistics</li>
+                          <li>95 ammo per clip, 900 RPM</li>
+                          <li>Does alot of damage, but has limited ammunition</li>
+                          <li>Grenade Underballel holds 4 grenades, but does more damage</li>
+                      </ul>
+                    <li>W.Y. Assault Rifle</li>
+                      <ul>
+                          <li>WRB rebalanced to more accurately match an M16a4 Assault Rifle</li>
+                          <li>Default to single fire mode, with upgrade giving 3 fire burst mode</li>
+                          <li>Flamer Fuel capacity doubled and damage increased (to replace the flamer which is now super rare)</li>
+                          <li>Shotgun Underbarrel weapon fires same ammo as Hick's shotgun, but carries only 4 shells.</li>
+                      </ul>
+                    <li>Battle Rifle</li>
+                      <ul>
+                          <li>Weight, Recoil and Ballistics rebalanced to more accurately match a USA Fielding M110 Sniper Rifle</li>
+                          <li>Mine Damage Increased</li>
+                      </ul>
+                    <li>M240 Incinerator Unit</li>
+                      <ul>
+                          <li>I had a choice. Flamers, or Smart-guns. I chose Smart-Guns. As a result only Apone's Flamer is available in the campaign</li>
+                          <li>Flame generation rate increased</li>
+                          <li>Fuel Capacity increased</li>
+                          <li>Fire Damage significantly increased</li>
+                      </ul>
+                    <li>M56 Smart Gun</li>
+                      <ul>
+                          <li>Assisted Targeting mechanics improved so that you need to guide it.</li>
+                          <li>WRB rebalanced to more accurately match its characteristics in the movie</li>
+                      </ul>
+                    <li>XM-99A Plasma Pulse Rifle</li>
+                      <ul>
+                          <li>shot count reduced to 2 per canister, but instant firing. With 6 canisters in reserve.</li>
+                          <li>WRB made up from scratch ( :P )</li>
+                      </ul>
+                    <li>Ripley's Pulse Rifle/Flamer</li>
+                      <ul>
+                          <li>Pulse rifle is a fully fledged Pulse Rifle (same as above)</li>
+                          <li>Flamer is a fully fledged Flamer (same as above)</li>
+                      </ul>
+                    <li>Explosives</li>
+                      <ul>
+                          <li>Damage greatly increased</li>
+                          <li>Effects reworked to accurately match the damage</li>
+                          <li>Physics shock-wave increased</li>
+                      </ul>
+                    <li>Firebombs / Fire / Incindiary</li>
+                      <ul>
+                          <li>Burn time increased</li>
+                          <li>Damage per second increased</li>
+                          <li>Special effect increased</li>
+                      </ul>
+                    <li>Sonic Electronic Ball Breakers</li>
+                      <ul>
+                          <li>Stun Time increased</li>
+                          <li>Lightning Sphere effect suped up</li>
+                      </ul>
+                  </ul>
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <!--
+        <div class="modal fade" id="changelog" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+          <div class="modal-dialog" role="document">
+            <div class="modal-content">
+              <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title" id="myModalLabel">ACM Overhaul Changelog</h4>
+              </div>
+              <div class="modal-body">
+                  <ul>
+                    <li>Engine / System</li>
+                      <ul>
+                          <li>Compatibility File modified so that all graphics card, regardless of model get by default the maximum quality settings available.</li>
+                          <li>Maximum Shadow resolution increased</li>
+                          <li>Shadow removal minimums lowered (more dynamics shadows)</li>
+                          <li>Texture input switched to use maximum LOD values, Anistropic Filtering and higher quality Sharpening filter for distant textures</li>
+                          <li>Particle System Spawn Rates, Life Times and LOD settings increased to remove resource limit restrictions
+Many Particle Effects redesigned using different effects to increase visibility / quality of the over-all in-game effects</li>
+                          <li>Lighting Models for Objects and Statics and many world objects improved through changes to Specular, Diffuse, Rim Lighting and Normal Mapping adjustments</li>
+                          <li>Dead Bodies, Body Parts, Acid Splashes and Blood Splashes remain in the game world indefinitely</li>
+                          <li>Spawning Volumes for dynamic and wave-attack sequences in the campaign have had a significant increase to the number of Xeno's and Mercs that can be spawned.</li>
+                          <li>Xeno's can easily overwhelm an area if not dealt with immediately, and Mercenary Loadouts are much more varied, with more smart-gun/flamer/battle-file merc's spawning.</li>
+                          <li>Tracer fire on all weapons switched to use the Sentry Gun tracer. This is an orange visible "bolt" and looks fantastic, really helping with gun on gun combat</li>
+                      </ul>
+                    <li>Xenomorph Shared</li>
+                      <ul>
+                          <li>Animations for Melee Combat (Win / Tie / Lose), Stance Changes, Jumping, Surface Transition, Stalking and Idling re-timed for better in-game behavior and movement</li>
+                          <li>Damage Zones and Critical Hit amounts reworked so that Head Shots are needed to take a Xeno down quickly, with glancing shots doing little damage</li>
+                          <li>Weapon Fire impacts and Deaths cause visual acid spurts/splashes that will burn and damage anything it touches</li>
+                      </ul>
+                    <li>Xenomorph Soldier / Crusher (most actions for the Crusher are heavily scripted, but any dynamic actions use Soldier AI mechanics)</li>
+                      <ul>
+                          <li>AI decision timing increased 1000% to greatly increase their ability to adapt to changing situations and react to new threats</li>
+                          <li>Movement Speed, Acceleration, Weight, Jump Power and Flight Speed rebalanced so they are extremely agile and move swiftly around the cluttered levels.</li>
+                          <li>Melee Encounter Mechanics modified so that they are almost exclusively used when it will kill the target. Xenos will wear down your armor with claws and kill you with an encounter</li>
+                          <li>Pouncing reworked to improve movement around the map by reducing the maximum distance to consider jumping to. This leads to better object hurdling and wall/roof usage</li>
+                          <li>Combat Damage significantly increased so only a few claw attacks are required to down a human</li>
+                      </ul>
+                    <li>Xenomorph Lurker</li>
+                      <ul>
+                          <li>AI decision timing increased 500% to increase their ability to outmaneuver you, without being impossibly difficult. Lurkers are truly terrifying!</li>
+                          <li>Movement Speed, Acceleration, Weight, Jump Power and Flight Speed rebalanced so they are extremely agile and move swiftly around the cluttered levels.</li>
+                          <li>Cover Mechanics reworked so they are exposed even less and move more often to stay hidden</li>
+                          <li>Combat Mechanics reworked so that they will wear you down through several spaced attacks before finishing you with a Melee Encounter</li>
+                          <li>Pouncing significantly nerfed to force them to run around instead of jumping across the maps. Increases their vulnerability crossing open spaces</li>
+                      </ul>
+                    <li>Xenomorph Ranger</li>
+                      <ul>
+                          <li>AI decision timing increased 500% so that they are much more reactive in their position choices. Rangers will quickly reposition to continue their barrage</li>
+                          <li>Movement Speed, Acceleration, Weight, Jump Power and Flight Speed rebalanced so they are extremely agile and move swiftly around the cluttered levels.</li>
+                          <li>Melee combat reconfigured to match Soldier melee combat. This makes Rangers more deadly than Soldiers!</li>
+                      </ul>
+                    <li>Xenomorph Boiler</li>
+                      <ul>
+                          <li>No changes have been directly made to the Boiler. Its AI is based on the Xeno Soldier, however its specialized mechanics already set a great pace in their short sewer sequence in the campaign so I did not change them.</li>
+                          <li>Their explosion however uses the generic acid damage mechanics and so are much more dangerous to groups</li>
+                      </ul>
+                    <li>Human Shared</li>
+                      <ul>
+                          <li>Animations for Stance Changes, Awareness and Idling reworked to look smoother</li>
+                          <li>Situational Voice Acting reworked to make AI more chatty and informative. Calling out enemies, movements and kills more often, as well as making scenic comments</li>
+                          <li>Awareness reconfigured to be much more realistic opening up more tactical game-play options</li>
+                          <li>Vision reworked to allow sneaking and hiding to be used allowing stealth play in some sequences. AI reposition more often to get a better line of sight on their target</li>
+                          <li>Gore Mechanics enabled for human corpses, allowing incidental damage and reactions to explosions after death</li>
+                          <li>Weapons Carried by AI use the same Recoil and Ballistics of the player weapons, and as such effect how deadly they are with each weapon (see below)</li>
+                          <li>Armor used by the AI use the same mechanics as the Player armor (see below)</li>
+                      </ul>
+                    <li>Weyland Yutani Mercaneries</li>
+                      <ul>
+                          <li>Teamwork tactics and information sharing reconfigured to remove their hive-mind like abilities. They share only what you hear them say</li>
+                          <li>Weapon Damage rebalanced to reduce their threat level against humans and xenos. Greatly reduces the frustration of fighting them, and makes them much weaker vs Xenos</li>
+                          <li>Health GREATLY reduced (they had 4x the health of the player originally)</li>
+                      </ul>
+                    <li>Colonial Marines</li>
+                      <ul>
+                          <li>Hive-Mind like ability reconfigured to improve the teamwork used by the AI in conjunction with player actions. Better use of cover, suppression and flanking</li>
+                          <li>Weapon Damage rebalanced to increase their effectiveness in combat dramatically without making them overpowered.</li>
+                      </ul>
+                    <li>Human Armor</li>
+                      <ul>
+                          <li>Base damage absorption greatly increased so that taking fire without armor is extremely painful. Armor is now MUCH more important to stay alive</li>
+                          <li>When fighting Mercs firing at non-armored locations is important to take them down quick (neck, arms, legs) with weaker weapons</li>
+                      </ul>
+                    <li>Shoulder Lamp</li>
+                      <ul>
+                          <li>Can be turned on for 4 minutes before it will flicker and turn off</li>
+                          <li>When off, the lamp will not begin recharging for 5 seconds</li>
+                          <li>Lamp recharges at about 1 Minute per second after that</li>
+                      </ul>
+                    <li>Combat Pistol / Gorman's</li>
+                      <ul>
+                          <li>Weight, Recoil and Ballistics (WRB from now on) rebalanced to more accurately match a PPK Pistol</li>
+                          <li>Holding position moved forward a lot so the gun is not so big on screen. (can look a little funny when bringing up the Motion Tracker)</li>
+                      </ul>
+                    <li>Service Pistol / Vasquez's</li>
+                      <ul>
+                          <li>WRB rebalanced to more accurately match a Colt .45 ACP</li>
+                          <li>Holding position moved forward a lot so the gun is not so big on screen.</li>
+                      </ul>
+                    <li>Sub Machine-gun</li>
+                      <ul>
+                          <li>WRB rebalanced to more accurately match an MP7A1 SMG</li>
+                      </ul>
+                    <li>Pump Shotgun, Hick's Shotgun</li>
+                      <ul>
+                          <li>Fires 00 Buckshot</li>
+                          <li>Weight, Recoil and Ballistics rebalanced to more accurately match a Mossburg 500 Cruiser</li>
+                      </ul>
+                    <li>Auto Shotgun</li>
+                      <ul>
+                          <li>Fires #4 Buckshot</li>
+                          <li>WRB rebalanced to more accurately match an Saiga 12 Shotgun</li>
+                      </ul>
+                    <li>Double Barrel Shotgun</li>
+                      <ul>
+                          <li>Fires 2 x Birdshot</li>
+                          <li>WRB rebalanced to more accurately match a 411 Bear Claw Double Barrel Short Shotgun</li>
+                      </ul>
+                    <li>M4A1 Pulse Rifle</li>
+                      <ul>
+                          <li>Mk2 replaced with original movie rifle</li>
+                          <li>95 ammo per clip, with ammo upgrade filling it to the maximum 99 (against Colonial Marines Field manual guidelines!)</li>
+                          <li>WRB rebalanced to more accurately match a Light Machine Gun with movie 'canon' statistics</li>
+                      </ul>
+                    <li>Hudsons Pulse Rifle</li>
+                      <ul>
+                          <li>Matches Above, but uses 5 round burst fire instead of full auto</li>
+                      </ul>
+                    <li>Assault Rifle</li>
+                      <ul>
+                          <li>WRB rebalanced to more accurately match an M16a4 Assault Rifle</li>
+                          <li>Default to single fire mode, with upgrade giving 3 fire burst mode</li>
+                          <li>Flamer Fuel capacity doubled</li>
+                      </ul>
+                    <li>Battle Rifle</li>
+                      <ul>
+                          <li>Weight, Recoil and Ballistics rebalanced to more accurately match a USA Fielding M110 Sniper Rifle</li>
+                      </ul>
+                    <li>M240 Incinerator Unit</li>
+                      <ul>
+                          <li>I had a choice. Flamers, or Smart-guns. I chose Smart-Guns. As a result only Apone's Flamer is available in the campaign</li>
+                          <li>Flame generation rate increased</li>
+                          <li>Fuel Capacity increased</li>
+                          <li>Fire Damage significantly increased</li>
+                      </ul>
+                    <li>M56 Smart Gun</li>
+                      <ul>
+                          <li>Assisted Targeting mechanics improved </li>
+                          <li>WRB rebalanced to more accurately match its characteristics in the movie</li>
+                      </ul>
+                    <li>XM-99A Plasma Pulse Rifle</li>
+                      <ul>
+                          <li>shot count reduced to 2 per canister, but instant firing. With 6 canisters in reserve.</li>
+                          <li>WRB made up from scratch ( :P )</li>
+                      </ul>
+                    <li>Ripley's Pulse Rifle/Flamer</li>
+                      <ul>
+                          <li>Pulse rifle is a fully fledged Pulse Rifle (same as above)</li>
+                          <li>Flamer is a fully fledged Flamer (same as above)</li>
+                      </ul>
+                    <li>Explosives</li>
+                      <ul>
+                          <li>Damage greatly increased</li>
+                          <li>Effects reworked to accurately match the damage</li>
+                          <li>Physics shock-wave increased</li>
+                      </ul>
+                    <li>Firebombs / Fire / Incindiary</li>
+                      <ul>
+                          <li>Burn time increased</li>
+                          <li>Damage per second increased</li>
+                          <li>Special effect increased</li>
+                      </ul>
+                    <li>Sonic Electronic Ball Breakers</li>
+                      <ul>
+                          <li>Stun Time increased</li>
+                          <li>Lightning Sphere effect suped up</li>
+                      </ul>
+                  </ul>
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+              </div>
+            </div>
+          </div>
+        </div>
+        -->
+        
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+        <script>
+            jQuery("#myCarousel").carousel({'interval':7000 });
+            
+            var vars = [], hash;
+            var hashes = window.location.href.slice(window.location.href.indexOf('?') + 1).split('&');
+            for(var i = 0; i < hashes.length; i++)
+            {
+                hash = hashes[i].split('=');
+                vars.push(hash[0]);
+                vars[hash[0]] = hash[1];
+            }
+            
+            if (vars[0] == "changelog") {
+                $('#changelog').modal('show');
+            }
+        </script>
+		<!-- Analytics -->
+		<script>
+		  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+		  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+		  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+		  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+		  ga('create', 'UA-39768980-7', 'auto');
+		  ga('send', 'pageview');
+
+		</script>
+    </body>
+</html>

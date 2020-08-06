@@ -1,0 +1,37 @@
+body {
+	background: url("http://media.moddb.com/images/members/4/3227/3226523/slide5.jpg") fixed center no-repeat; 
+	background-size: cover;
+}
+#body {
+	background: transparent !important;
+}
+.headerbox, .headercorner {
+	border: 0 !important;
+}
+.headerbox {
+	background: url("http://media.moddb.com/images/members/4/3227/3226523/moddb_header_bigger.png") center !important;
+	background-size: cover;
+	height: 250px !important;
+	margin-top: 50px !important;
+}
+.headercorner > .title {
+	visibility: hidden;
+}
+.tooltip {
+	background: #003470;
+}
+.menu {
+	text-align: center;
+	margin-top: 112px !important;
+}
+.headernormalbox {
+	margin-top: 50px !important; 
+	border-top: 5px solid black !important;
+}
+.headernormalbox > .inner > .body > .tooltip {
+	display: none !important;
+}
+.headernormalbox > .inner > .body {
+	padding-top: 15px !important;
+	text-align: center;
+}
